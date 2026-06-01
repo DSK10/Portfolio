@@ -1,0 +1,32 @@
+# Secrets & local config
+chat-config.local.js
+
+# Python / ML dev (not needed for static site)
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+generate_immersive_pipeline.py
+requirements.txt
+video_script.md
+
+# Large media — demos use S3 + extracted stills in images/
+Videos/
+*.mp4
+*.mov
+*.avi
+
+# Duplicate / unused assets
+DSC_5328.jpeg
+*.jpeg
+
+# OS & editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Logs & temp
+*.log
+.cache/
