@@ -168,8 +168,8 @@
     } catch (e) {
       profileLoadError = e.message;
       profileContent =
-        'Deepesh Singh is an AI Engineer & Team Lead in Lucknow, India, at Cynapto Technologies. ' +
-        'He owns agentic AI and visual dubbing product lines. Contact: deepeshsingh10@gmail.com, LinkedIn /in/10dsk, GitHub DSK10.';
+        'Deepesh Singh is an AI & Deep Learning Scientist in Lucknow, India, at Cynapto Technologies (Mumbai). ' +
+        'He owns agentic AI and visual dubbing product lines. Contact: deepeshsingh10@gmail.com, LinkedIn /in/10dsk, GitHub DSK10, YouTube @DEEPESHSINGH10.';
     }
     return profileContent;
   }

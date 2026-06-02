@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Deepesh Singh — AI Engineer & Team Lead</title>
+<title>Deepesh Singh — AI & Deep Learning Scientist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -1960,6 +1960,48 @@
 
   .contact-email:hover { color: var(--accent); }
 
+  .contact-intro {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 1rem;
+    line-height: 1.8;
+  }
+
+  .contact-role-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1.25rem auto 0.25rem;
+    max-width: 520px;
+  }
+
+  .contact-role-tag {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(45,212,160,0.12);
+    color: var(--accent-green);
+    border: 0.5px solid rgba(45,212,160,0.32);
+    letter-spacing: 0.04em;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    cursor: default;
+  }
+
+  .contact-role-tag:hover {
+    background: rgba(45,212,160,0.2);
+    border-color: rgba(45,212,160,0.48);
+    transform: translateY(-1px);
+  }
+
+  html[data-theme="light"] .contact-role-tag {
+    background: rgba(45,212,160,0.14);
+    color: #0a8f62;
+    border-color: rgba(45,212,160,0.38);
+  }
+
   .contact-links {
     display: flex;
     justify-content: center;
@@ -2406,7 +2448,7 @@
   <div class="hero-content container">
     <div class="hero-layout">
       <div class="hero-text">
-        <div class="hero-eyebrow">AI Engineer &amp; Team Lead · Lucknow, India</div>
+        <div class="hero-eyebrow">AI &amp; Deep Learning Scientist · Lucknow, India</div>
         <h1 class="hero-name">Deepesh<br>Singh</h1>
         <p class="hero-title">Building <span class="highlight">AI systems</span><br>that actually ship.</p>
         <p class="hero-bio">
@@ -2459,7 +2501,7 @@
         <span class="hero-photo-glow" aria-hidden="true"></span>
         <div class="hero-photo-ring" aria-hidden="true"></div>
         <div class="hero-photo-frame">
-          <img src="DSC_5328.jpg" alt="Deepesh Singh — AI Engineer &amp; Team Lead" class="hero-photo" width="260" height="260" loading="eager">
+          <img src="DSC_5328.jpg" alt="Deepesh Singh — AI &amp; Deep Learning Scientist" class="hero-photo" width="260" height="260" loading="eager">
         </div>
         <span class="hero-photo-dot hero-photo-dot--1" aria-hidden="true"></span>
         <span class="hero-photo-dot hero-photo-dot--2" aria-hidden="true"></span>
@@ -2524,7 +2566,7 @@
     <div class="about-grid">
       <div class="about-left">
         <p>
-          I'm an AI Engineer and Team Lead at <strong>Cynapto Technologies</strong>, where I lead a team of 4 AI engineers and researchers. I am the <strong>technical owner</strong> of two flagship verticals — <strong>agentic AI</strong> (enterprise copilots, multi-agent platforms) and <strong>visual dubbing</strong> (diffusion lip-sync pipeline + editing studio) — taking each from architecture and roadmap planning through design, development, testing, and production rollout.
+          I'm an AI &amp; Deep Learning Scientist at <strong>Cynapto Technologies</strong> (Mumbai). I am the <strong>technical owner</strong> of two flagship verticals — <strong>agentic AI</strong> (enterprise copilots, multi-agent platforms) and <strong>visual dubbing</strong> (diffusion lip-sync pipeline + editing studio) — taking each from architecture and roadmap planning through design, development, testing, and production rollout.
         </p>
         <p>
           My work sits at the intersection of <strong>cutting-edge research and real deployment</strong>. I've trained diffusion-based lip-sync models on 500 hours of visual-speaking data across 4×A100 and 4×H100 clusters, built multi-tenant agentic RAG platforms with LangChain, FAISS, and Pinecone for enterprises, and designed drag-and-drop multi-agent orchestration systems powered by LangGraph and Langflow that run 24×7 with event-driven triggers and human-in-the-loop checkpoints.
@@ -2599,7 +2641,7 @@
         </div>
         <div class="flagship-body">
           <h3>Cynapto Technologies</h3>
-          <p class="flagship-role">Lead AI &amp; Deep Learning Engineer · Team Lead</p>
+          <p class="flagship-role">AI &amp; Deep Learning Scientist</p>
           <div class="work-preview-meta">
             <span class="work-date-range">Aug 2022 <span class="work-date-sep">—</span> <span class="work-date-present">Present</span></span>
             <span class="work-duration">3 yrs 9 mos</span>
@@ -2673,7 +2715,7 @@
           <span class="exp-company">Cynapto Technologies Pvt. Ltd.</span>
           <span class="exp-period">Aug 2022 – Present</span>
         </div>
-        <div class="exp-role">Lead AI &amp; Deep Learning Engineer · Team Lead</div>
+        <div class="exp-role">AI &amp; Deep Learning Scientist</div>
         <div class="exp-projects">
 
           <div class="exp-project">
@@ -3326,9 +3368,14 @@
     <div class="contact-inner">
       <div class="section-label" style="justify-content:center;">Get in touch</div>
       <h2 class="section-heading" style="font-size:clamp(2rem,5vw,3.5rem);">Let's build<br>something together</h2>
-      <p style="color:var(--text-muted);font-size:1rem;margin-top:1rem;line-height:1.8;">
-        Open to senior AI engineering roles, research collaborations, and consulting on agentic AI or generative AI systems. Based in Lucknow, UP — available for remote and hybrid work.
-      </p>
+      <p class="contact-intro">I am open to the following roles — as well as research collaborations and consulting on agentic AI or generative AI systems.</p>
+      <div class="contact-role-tags" aria-label="Open roles">
+        <span class="contact-role-tag">AI Engineer</span>
+        <span class="contact-role-tag">Agentic AI Engineer</span>
+        <span class="contact-role-tag">Generative AI Engineer</span>
+        <span class="contact-role-tag">Forward Deployed Engineer</span>
+        <span class="contact-role-tag">Python Developer</span>
+      </div>
       <a href="mailto:deepeshsingh10@gmail.com" class="contact-email">deepeshsingh10@gmail.com</a>
       <div style="font-family:var(--mono);font-size:0.8rem;color:var(--text-dim);margin-bottom:2rem;">+91 98070 46206</div>
       <div class="contact-links">
@@ -3348,6 +3395,10 @@
           <a href="https://github.com/DSK10" class="social-card-link" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             GitHub
+          </a>
+          <a href="https://www.youtube.com/@DEEPESHSINGH10" class="social-card-link" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
+            YouTube
           </a>
         </div>
       </div>
@@ -3375,7 +3426,7 @@
   <div class="chat-prompts" id="chat-prompts">
     <button type="button" class="chat-prompt-btn" data-prompt="What does Deepesh work on?">Current work</button>
     <button type="button" class="chat-prompt-btn" data-prompt="Tell me about the lip-sync project">Lip-sync</button>
-    <button type="button" class="chat-prompt-btn" data-prompt="Is he open to remote roles?">Remote roles</button>
+    <button type="button" class="chat-prompt-btn" data-prompt="Is he open to new roles?">New roles</button>
   </div>
   <p class="chat-error" id="chat-error" hidden></p>
   <form class="chat-form" id="chat-form">
@@ -3389,7 +3440,7 @@
 <!-- FOOTER -->
 <footer>
   <p>© 2025 Deepesh Singh</p>
-  <p>AI Engineer · Lucknow, India</p>
+  <p>AI &amp; Deep Learning Scientist · Lucknow, India</p>
 </footer>
 
 <script>

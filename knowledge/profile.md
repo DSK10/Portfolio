@@ -2,23 +2,27 @@
 
 ## Identity
 - Name: Deepesh Singh
-- Title: AI Engineer & Team Lead
+- Title: AI & Deep Learning Scientist
 - Location: Lucknow, Uttar Pradesh, India
-- Availability: Open to senior AI engineering roles, research collaborations, and consulting on agentic AI or generative AI systems. Remote and hybrid work available.
+- Employer HQ: Cynapto Technologies — Mumbai, India
+- Availability: Open to AI Engineer, Agentic AI Engineer, Generative AI Engineer, Forward Deployed Engineer, and Python Developer roles; research collaborations; consulting on agentic AI or generative AI systems.
 - Notice period: 1 month (June 1 – July 1, 2026). Earliest join date after serving notice: July 1, 2026.
 - Email: deepeshsingh10@gmail.com
 - Phone: +91 98070 46206
 - LinkedIn: https://www.linkedin.com/in/10dsk/
 - GitHub: https://github.com/DSK10 (55+ AI/ML projects)
+- YouTube: https://www.youtube.com/@DEEPESHSINGH10
 
 ## Summary
-AI Engineer and Team Lead at Cynapto Technologies. Technical owner of two flagship verticals: agentic AI (enterprise copilots, multi-agent platforms) and visual dubbing (diffusion lip-sync pipeline + editing studio). 4+ years shipping production AI systems. Work spans cutting-edge research and real deployment.
+AI & Deep Learning Scientist at Cynapto Technologies (Mumbai), based in Lucknow. Technical owner of two flagship verticals: agentic AI (enterprise copilots, multi-agent platforms) and visual dubbing (diffusion lip-sync pipeline + editing studio). 4+ years shipping production AI systems. Work spans cutting-edge research and real deployment. Not currently a team lead; previously served as team lead (see experience).
 
 ## Current role — Cynapto Technologies Pvt. Ltd.
-- Role: Lead AI & Deep Learning Engineer · Team Lead
+- Role: AI & Deep Learning Scientist
+- Company location: Mumbai, India
+- Based in: Lucknow, India
 - Period: Aug 2022 – Present (~3 yrs 9 mos as of portfolio)
-- Team: Leads 4 AI engineers and researchers
 - Ownership: End-to-end technical owner of agentic AI and visual dubbing product lines — architecture through production rollout
+- Past leadership: Previously served as team lead of 4 AI engineers and researchers (detailed under experience)
 
 ### Flagship verticals
 1. **Agentic AI**
@@ -31,7 +35,8 @@ AI Engineer and Team Lead at Cynapto Technologies. Technical owner of two flagsh
 ## Experience timeline
 
 ### Cynapto Technologies — Aug 2022 – Present
-Lead AI & Deep Learning Engineer · Team Lead. Key systems:
+AI & Deep Learning Scientist, based in Lucknow (company HQ in Mumbai). Previously served as team lead. Key systems:
+- Team leadership (past): Led 4 AI engineers and researchers; sprint planning, code reviews, mentoring
 - Multi-Agent Orchestration Platform (LangGraph, Langflow, FastAPI, event-driven triggers, 4 production deployments)
 - Enterprise Agentic RAG Copilot (multi-tenant, LangChain, FAISS, Pinecone, OpenAI Embeddings, GPT-4)
 - Production Lip-Sync Pipeline (500 hrs training data, 4×A100/4×H100, diffusion models, studio APIs)
@@ -94,7 +99,8 @@ Full-Stack & AI Developer. 25+ international deliveries; led 3-person team on cl
 **Art & visual craft:** Painting, VFX, 3D Animation
 
 ## Hiring & contact
-- Open to: senior AI engineering roles, research collaborations, agentic AI / generative AI consulting
+- Open to: AI Engineer, Agentic AI Engineer, Generative AI Engineer, Forward Deployed Engineer, Python Developer; research collaborations; agentic AI / generative AI consulting
+- Based in Lucknow; employer HQ in Mumbai
 - Notice period: 1 month, from **June 1, 2026** through **July 1, 2026**; available to start a new role from **July 1, 2026** onward
 - Preferred contact: deepeshsingh10@gmail.com or LinkedIn
 
