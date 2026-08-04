@@ -4,6 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Deepesh Singh — AI & Deep Learning Scientist</title>
+  <meta name="description" content="AI & Deep Learning Scientist — agentic AI, LLMs, enterprise RAG, and diffusion-based video pipelines. 4+ years shipping production AI systems end-to-end.">
+  <meta name="author" content="Deepesh Singh">
+  <link rel="canonical" href="https://dsk10.github.io/Portfolio/">
+
+  <!-- Open Graph / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dsk10.github.io/Portfolio/">
+  <meta property="og:title" content="Deepesh Singh — AI & Deep Learning Scientist">
+  <meta property="og:description" content="Agentic AI, enterprise RAG, and diffusion lip-sync pipelines — architected, built, and shipped to production.">
+  <meta property="og:image" content="https://dsk10.github.io/Portfolio/images/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter/X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Deepesh Singh — AI & Deep Learning Scientist">
+  <meta name="twitter:description" content="Agentic AI, enterprise RAG, and diffusion lip-sync pipelines — architected, built, and shipped to production.">
+  <meta name="twitter:image" content="https://dsk10.github.io/Portfolio/images/og-card.png">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Deepesh Singh",
+    "jobTitle": "AI & Deep Learning Scientist",
+    "email": "mailto:deepeshsingh10@gmail.com",
+    "url": "https://dsk10.github.io/Portfolio/",
+    "address": { "@type": "PostalPlace", "addressLocality": "Lucknow", "addressRegion": "Uttar Pradesh", "addressCountry": "IN" },
+    "worksFor": { "@type": "Organization", "name": "Cynapto Technologies Pvt. Ltd." },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Gautam Buddha University" },
+    "knowsAbout": ["Agentic AI","Large Language Models","Retrieval-Augmented Generation","Diffusion Models","Computer Vision","MLOps"],
+    "sameAs": ["https://www.linkedin.com/in/10dsk/","https://github.com/DSK10","https://www.youtube.com/@DEEPESHSINGH10"]
+  }
+  </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -18,7 +53,7 @@
     --border-bright: rgba(255,255,255,0.15);
     --text: #f0eff5;
     --text-muted: #9b9aad;
-    --text-dim: #4a4960;
+    --text-dim: #7d7b96;
     --accent: #7c6fff;
     --accent-2: #2dd4a0;
     --accent-green: #2dd4a0;
@@ -44,7 +79,11 @@
     --border-bright: rgba(124,111,255,0.17);
     --text: #14121f;
     --text-muted: #4e4a62;
-    --text-dim: #7a7590;
+    --text-dim: #625d78;
+    --accent: #5a49e0;
+    --accent-2: #0b7f5f;
+    --accent-green: #0b7f5f;
+    --accent-3: #d4413f;
     --nav-bg: rgba(238,236,246,0.92);
     --surface-hover: rgba(124,111,255,0.07);
     --shimmer: linear-gradient(110deg, #e6e2f0 28%, #f0eef8 50%, #e4eee9 72%);
@@ -53,6 +92,208 @@
     --carousel-arrow-bg: rgba(243,241,250,0.94);
     --carousel-fade: var(--bg-2);
     --noise-opacity: 0.1;
+  }
+
+  /* ================= MOBILE NAV ================= */
+  .nav-toggle {
+    display: none;
+    width: 44px; height: 44px;
+    align-items: center; justify-content: center;
+    background: none; border: 0.5px solid var(--border);
+    border-radius: 9px; cursor: pointer; color: var(--text);
+    transition: border-color .2s ease;
+  }
+  .nav-toggle:hover { border-color: var(--accent); }
+  .nav-toggle-bars { display: block; width: 17px; }
+  .nav-toggle-bars i {
+    display: block; height: 1.5px; background: currentColor; border-radius: 2px;
+    transition: transform .28s ease, opacity .2s ease;
+  }
+  .nav-toggle-bars i + i { margin-top: 4px; }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bars i:nth-child(1) { transform: translateY(5.5px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bars i:nth-child(2) { opacity: 0; }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bars i:nth-child(3) { transform: translateY(-5.5px) rotate(-45deg); }
+
+  .nav-mobile {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 90;
+    background: var(--nav-bg);
+    -webkit-backdrop-filter: saturate(180%) blur(18px);
+    backdrop-filter: saturate(180%) blur(18px);
+    border-bottom: 0.5px solid var(--border);
+    padding: 5.25rem 1.25rem 1.5rem;
+    display: flex; flex-direction: column; gap: 0.15rem;
+    transform: translateY(-100%); opacity: 0;
+    transition: transform .34s cubic-bezier(.3,.8,.3,1), opacity .24s ease;
+  }
+  .nav-mobile.is-open { transform: translateY(0); opacity: 1; }
+  .nav-mobile a {
+    font-family: var(--display); font-size: 1.05rem; font-weight: 500;
+    color: var(--text-muted); text-decoration: none;
+    padding: 0.7rem 0.25rem; border-bottom: 0.5px solid var(--border);
+    transition: color .18s ease, padding-left .18s ease;
+  }
+  .nav-mobile a:last-of-type { border-bottom: 0; }
+  .nav-mobile a:active, .nav-mobile a:hover { color: var(--text); padding-left: 0.6rem; }
+  .nav-mobile-cta {
+    margin-top: 0.9rem; color: var(--accent) !important;
+    font-family: var(--mono) !important; font-size: 0.82rem !important;
+    text-transform: lowercase;
+  }
+
+  /* ================= AGENT BOOT OVERLAY ================= */
+  .boot {
+    position: fixed; inset: 0; z-index: 2000;
+    display: grid; place-items: center;
+    background:
+      radial-gradient(120% 90% at 50% 0%, rgba(124,111,255,0.10) 0%, transparent 62%),
+      var(--bg);
+    opacity: 1; transition: opacity .5s ease, visibility .5s ease;
+  }
+  .boot.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
+  html.booting, html.booting body { overflow: hidden; }
+
+  .boot-inner {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 1.6rem; padding: 2rem; width: min(560px, 90vw);
+  }
+  .boot-mark {
+    font-family: var(--display); font-weight: 800; font-size: 1.35rem;
+    letter-spacing: -0.02em; color: var(--text);
+  }
+  .boot-mark span { color: var(--accent); }
+
+  .boot-stage {
+    display: grid; grid-template-columns: auto 1fr; align-items: center;
+    gap: 1.75rem; width: 100%;
+  }
+  .boot-graph { width: 150px; height: 102px; color: var(--accent); flex-shrink: 0; }
+
+  .boot-nodes circle {
+    fill: var(--bg); stroke: var(--accent); stroke-width: 1.5;
+    opacity: 0; transform-box: fill-box; transform-origin: center;
+    transform: scale(.4);
+    transition: opacity .32s ease, transform .32s cubic-bezier(.2,1.4,.4,1), fill .32s ease;
+  }
+  .boot-nodes circle.on { opacity: 1; transform: scale(1); }
+  .boot-nodes circle.hot { fill: color-mix(in srgb, var(--accent) 35%, transparent); }
+  .boot-edges path {
+    stroke-dasharray: 100; stroke-dashoffset: 100; opacity: .55;
+    transition: stroke-dashoffset .45s ease;
+  }
+  .boot-edges path.on { stroke-dashoffset: 0; }
+
+  .boot-log {
+    list-style: none; margin: 0; padding: 0;
+    font-family: var(--mono); font-size: 0.72rem; line-height: 1.9;
+    min-height: 102px;
+  }
+  .boot-log li {
+    display: flex; align-items: baseline; gap: .5rem;
+    opacity: 0; transform: translateY(4px);
+    animation: bootLine .3s ease forwards;
+    white-space: nowrap;
+  }
+  @keyframes bootLine { to { opacity: 1; transform: none; } }
+  .boot-log .b-label { color: var(--text-muted); }
+  .boot-log .b-meta  { color: var(--text-dim); }
+  .boot-log .b-ok {
+    margin-left: auto; color: var(--accent-2); font-weight: 500;
+    opacity: 0; animation: bootLine .22s ease .16s forwards;
+  }
+  .boot-log .b-ready { color: var(--accent-2); }
+  .boot-log .b-cursor {
+    display: inline-block; width: 7px; height: 12px;
+    background: var(--accent-2); margin-left: 2px;
+    animation: chatCursorBlink 1s steps(2) infinite;
+  }
+
+  .boot-bar {
+    width: 100%; height: 2px; border-radius: 2px;
+    background: var(--border); overflow: hidden;
+  }
+  .boot-bar i {
+    display: block; height: 100%; width: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    transform: scaleX(0); transform-origin: 0 50%;
+    transition: transform .25s linear;
+  }
+  .boot-hint {
+    font-family: var(--mono); font-size: 0.64rem; letter-spacing: .06em;
+    color: var(--text-dim); margin: 0; text-transform: lowercase;
+  }
+
+  @media (max-width: 560px) {
+    .boot-stage { grid-template-columns: 1fr; gap: 1.1rem; justify-items: center; }
+    .boot-log { font-size: 0.66rem; min-height: 0; }
+    .boot-graph { width: 120px; height: 82px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .boot { display: none !important; }
+  }
+
+  /* --- Scroll progress indicator --- */
+  .scroll-progress {
+    position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 999;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    transform: scaleX(0); transform-origin: 0 50%;
+    will-change: transform; pointer-events: none;
+  }
+
+  /* --- Buttons with icons --- */
+  .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; }
+  .btn-ghost svg { width: 15px; height: 15px; flex-shrink: 0; }
+  .btn-ghost--primary { border-color: color-mix(in srgb, var(--accent) 45%, transparent); color: var(--text); }
+  .btn-ghost--primary:hover { border-color: var(--accent); }
+  .btn-copy { cursor: pointer; font: inherit; background: none; }
+  .btn-copy.is-copied { color: var(--accent-2); border-color: color-mix(in srgb, var(--accent-2) 50%, transparent); }
+  .contact-actions {
+    display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.1rem 0 2rem;
+  }
+
+  /* --- Footer meta --- */
+  .site-meta {
+    text-align: center; font-family: var(--mono); font-size: 0.72rem;
+    color: var(--text-dim); padding: 2.5rem 1.5rem 3rem;
+  }
+
+  /* --- Respect OS reduced-motion preference --- */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    html { scroll-behavior: auto; }
+  }
+
+  /* --- Video placeholder: readable before the S3 thumbnail arrives --- */
+  .vplayer {
+    background:
+      radial-gradient(120% 120% at 50% 0%, rgba(124,111,255,0.10) 0%, transparent 60%),
+      linear-gradient(160deg, var(--bg-3) 0%, var(--vplayer-bg) 100%);
+  }
+  .vplayer::after {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: 1; pointer-events: none;
+    transition: opacity .35s ease;
+  }
+  .vplayer.has-thumb::after, .vplayer.is-playing::after { opacity: 0; }
+
+  /* --- Wider container on large screens; the demos deserve the room --- */
+  @media (min-width: 1440px) {
+    .container { max-width: 1240px; }
+    #demo .container { max-width: 1400px; }
+  }
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .container { padding-left: 2.5rem; padding-right: 2.5rem; }
+    .skills-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
   }
 
   html[data-theme="light"] body {
@@ -240,6 +481,18 @@
   }
 
   .nav-cta:hover { background: var(--surface-hover); border-color: var(--accent); }
+
+  .inline-link {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    padding-bottom: 1px;
+    transition: color .18s ease, border-color .18s ease;
+  }
+  .inline-link:hover {
+    color: var(--accent-2);
+    border-bottom-color: color-mix(in srgb, var(--accent-2) 60%, transparent);
+  }
 
   /* HERO */
   .hero {
@@ -1340,6 +1593,8 @@
     line-height: 1.5;
   }
 
+  .life-item-icon svg { width: 20px; height: 20px; color: var(--accent); display: block; }
+  .skill-card-icon svg { width: 20px; height: 20px; color: var(--accent); }
   .life-item-icon {
     font-size: 1.15rem;
     margin-bottom: 0.5rem;
@@ -2153,8 +2408,39 @@
     #flagship { padding: 2rem 1.25rem; }
     #work-preview { padding: 2rem 1.25rem; }
     .demo-carousel-slide { flex: 0 0 82%; }
-    .demo-carousel-arrow { width: 32px; height: 32px; margin-top: -16px; }
+    .demo-carousel-arrow { width: 40px; height: 40px; margin-top: -20px; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+    /* show the hamburger, keep the nav compact */
+    .nav-toggle { display: inline-flex; }
+    .nav-actions { gap: 0.5rem; }
+    .nav-cta { display: none; }
+    .theme-toggle { width: 44px; height: 44px; }
+    .nav-logo { font-size: 1.05rem; padding: 0.4rem 0; }
+
+    /* comfortable touch targets */
+    .btn-ghost, .contact-link, .social-card-link {
+      min-height: 44px; padding-top: 0.7rem; padding-bottom: 0.7rem;
+    }
+    .exp-project-toggle { padding: 0.95rem 1rem; min-height: 52px; }
+    .hero-actions-secondary { flex-wrap: wrap; gap: 0.5rem; }
+    .hero-actions-secondary .btn-ghost { flex: 1 1 auto; justify-content: center; }
+
+    /* one column everywhere it matters */
+    .projects-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .contact-actions { flex-direction: column; }
+    .contact-actions .btn-ghost { justify-content: center; }
+
+    /* boot overlay: let long lines wrap instead of overflowing */
+    .boot-log li { white-space: normal; }
+    .boot-log .b-ok { margin-left: 0.4rem; }
+
+    /* inline links & video controls need finger-sized hit areas */
+    .project-demo-link { display: inline-flex; align-items: center; min-height: 44px; }
+    .vplayer-btn { width: 40px; height: 40px; }
+    .vplayer-bar { padding: 0.5rem 0.6rem; gap: 0.5rem; }
+    .vplayer-seek { height: 40px; }
   }
 
   /* Portfolio chat */
@@ -2401,6 +2687,21 @@
       bottom: 4.5rem;
     }
     .chat-fab { right: 0.75rem; bottom: 1rem; }
+
+    section { padding: 3.25rem 1.1rem; }
+    .hero { padding: 5.5rem 1.1rem 2.5rem; }
+    .hero-stats { gap: 1.25rem; }
+    .hero-photo-wrap { width: 190px; height: 190px; }
+    .hero-photo-frame { width: 168px; height: 168px; }
+
+    /* boot overlay: drop the tech meta, keep label + ok readable */
+    .boot-log { font-size: 0.62rem; line-height: 1.75; }
+    .boot-log .b-meta { display: none; }
+    .boot-graph { width: 104px; height: 72px; }
+    .boot-inner { gap: 1.15rem; }
+
+    .demo-carousel-slide { flex: 0 0 88%; }
+    .tag, .tech-tag { font-size: 0.7rem; }
   }
 
   /* Scrollbar */
@@ -2418,13 +2719,48 @@
 </head>
 <body>
 
+<!-- AGENT BOOT OVERLAY -->
+<div id="boot" class="boot" role="status" aria-live="polite" aria-label="Loading portfolio">
+  <div class="boot-inner">
+    <div class="boot-mark">DS<span>.</span></div>
+
+    <div class="boot-stage">
+      <svg class="boot-graph" viewBox="0 0 220 150" aria-hidden="true">
+        <g class="boot-edges" stroke="currentColor" fill="none" stroke-width="1.25" stroke-linecap="round">
+          <path d="M110 26 L52 70"  data-edge="1"/>
+          <path d="M110 26 L168 70" data-edge="2"/>
+          <path d="M52 70  L34 122" data-edge="3"/>
+          <path d="M52 70  L92 122" data-edge="4"/>
+          <path d="M168 70 L132 122" data-edge="5"/>
+          <path d="M168 70 L188 122" data-edge="6"/>
+          <path d="M52 70  L168 70"  data-edge="7"/>
+        </g>
+        <g class="boot-nodes">
+          <circle cx="110" cy="26"  r="7"   data-node="0"/>
+          <circle cx="52"  cy="70"  r="5.5" data-node="1"/>
+          <circle cx="168" cy="70"  r="5.5" data-node="2"/>
+          <circle cx="34"  cy="122" r="4"   data-node="3"/>
+          <circle cx="92"  cy="122" r="4"   data-node="4"/>
+          <circle cx="132" cy="122" r="4"   data-node="5"/>
+          <circle cx="188" cy="122" r="4"   data-node="6"/>
+        </g>
+      </svg>
+
+      <ul class="boot-log" id="boot-log"></ul>
+    </div>
+
+    <div class="boot-bar"><i></i></div>
+    <p class="boot-hint">press any key to skip</p>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">DS<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#flagship">flagship</a></li>
     <li><a href="#about">about</a></li>
-    <li><a href="#work-preview">work</a></li>
+    <li><a href="#experience">work</a></li>
     <li><a href="#skills">skills</a></li>
     <li><a href="#projects">projects</a></li>
     <li><a href="#demo">demo</a></li>
@@ -2432,6 +2768,9 @@
     <li><a href="#contact">contact</a></li>
   </ul>
   <div class="nav-actions">
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile">
+      <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
     <button type="button" class="theme-toggle" aria-label="Switch to light mode" title="Toggle light / dark mode">
       <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
       <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -2439,6 +2778,18 @@
     <a href="mailto:deepeshsingh10@gmail.com" class="nav-cta">get in touch →</a>
   </div>
 </nav>
+
+<div class="nav-mobile" id="nav-mobile" hidden>
+  <a href="#flagship">flagship</a>
+  <a href="#about">about</a>
+  <a href="#experience">work</a>
+  <a href="#skills">skills</a>
+  <a href="#projects">projects</a>
+  <a href="#demo">demo</a>
+  <a href="#life">life</a>
+  <a href="#contact">contact</a>
+  <a href="https://drive.google.com/file/d/1Xj2GKfV-FVhUcr6BHnls6Nq_HTYMakEk/view?usp=sharing" target="_blank" rel="noopener" class="nav-mobile-cta">view resume →</a>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="hero">
@@ -2460,7 +2811,7 @@
             <div class="stat-label">Years Exp.</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">55<span>+</span></div>
+            <div class="stat-num">85<span>+</span></div>
             <div class="stat-label">GitHub Projects</div>
           </div>
           <div class="stat-item">
@@ -2480,7 +2831,7 @@
               </span>
               <span class="hero-cta-arrow" aria-hidden="true">→</span>
             </a>
-            <a href="#work-preview" class="hero-cta-card hero-cta-card--work">
+            <a href="#experience" class="hero-cta-card hero-cta-card--work">
               <span class="hero-cta-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
               </span>
@@ -2492,6 +2843,10 @@
             </a>
           </div>
           <div class="hero-actions-secondary">
+            <a href="https://drive.google.com/file/d/1Xj2GKfV-FVhUcr6BHnls6Nq_HTYMakEk/view?usp=sharing" class="btn-ghost btn-ghost--primary" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Resume
+            </a>
             <a href="#contact" class="btn-ghost">Let's Talk</a>
             <a href="https://github.com/DSK10" class="btn-ghost" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
@@ -2569,7 +2924,7 @@
           I'm an AI &amp; Deep Learning Scientist at <strong>Cynapto Technologies</strong> (Mumbai). I am the <strong>technical owner</strong> of two flagship verticals — <strong>agentic AI</strong> (enterprise copilots, multi-agent platforms) and <strong>visual dubbing</strong> (diffusion lip-sync pipeline + editing studio) — taking each from architecture and roadmap planning through design, development, testing, and production rollout.
         </p>
         <p>
-          My work sits at the intersection of <strong>cutting-edge research and real deployment</strong>. I've trained diffusion-based lip-sync models on 500 hours of visual-speaking data across 4×A100 and 4×H100 clusters, built multi-tenant agentic RAG platforms with LangChain, FAISS, and Pinecone for enterprises, and designed drag-and-drop multi-agent orchestration systems powered by LangGraph and Langflow that run 24×7 with event-driven triggers and human-in-the-loop checkpoints.
+          My work sits at the intersection of <strong>cutting-edge research and real deployment</strong>. I've trained diffusion-based lip-sync models on 500 hours of visual-speaking data across 4×H100, 4×A100, and A40 clusters, built multi-tenant agentic RAG platforms with LangChain, FAISS, and Pinecone for enterprises, and designed drag-and-drop multi-agent orchestration systems powered by LangGraph and Langflow that run 24×7 with event-driven triggers and human-in-the-loop checkpoints.
         </p>
         <p>
           I hold an M.Tech in <strong>Artificial Intelligence and Robotics</strong> from Gautam Buddha University (8.0 GPA) and have published research on Generative Adversarial Networks. I also mentor aspiring AI/ML practitioners and have completed 15+ certifications from Google, IBM, and DeepLearning.ai.
@@ -2618,7 +2973,7 @@
           </div>
           <div class="research-item">
             <h4>Career Recommendation System Explainability for High-School Seniors based on Government Standardized-Tests Results</h4>
-            <span style="font-family:var(--mono);font-size:0.72rem;color:var(--text-dim);">Google × Omdena Open Source</span>
+            <span style="font-family:var(--mono);font-size:0.72rem;color:var(--text-dim);">Omdena — Google-partnered open source</span>
           </div>
         </div>
       </div>
@@ -2628,76 +2983,7 @@
 
 <div class="divider"></div>
 
-<!-- WORK EXPERIENCE PREVIEW -->
-<section id="work-preview">
-  <div class="container">
-    <div class="section-label">Work Experience</div>
-    <p class="work-preview-summary"><strong>5+ years</strong> across 4 roles · Oct 2020 – Present</p>
-    <div class="flagship-grid">
 
-      <a href="#exp-cynapto" class="flagship-card">
-        <div class="flagship-icon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-        </div>
-        <div class="flagship-body">
-          <h3>Cynapto Technologies</h3>
-          <p class="flagship-role">AI &amp; Deep Learning Scientist</p>
-          <div class="work-preview-meta">
-            <span class="work-date-range">Aug 2022 <span class="work-date-sep">—</span> <span class="work-date-present">Present</span></span>
-            <span class="work-duration">3 yrs 9 mos</span>
-          </div>
-        </div>
-        <span class="flagship-link">View details →</span>
-      </a>
-
-      <a href="#exp-skyrath" class="flagship-card">
-        <div class="flagship-icon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        </div>
-        <div class="flagship-body">
-          <h3>Skyrath Pvt. Ltd.</h3>
-          <p class="flagship-role">Backend Django Developer</p>
-          <div class="work-preview-meta">
-            <span class="work-date-range">Nov 2021 <span class="work-date-sep">—</span> Jul 2022</span>
-            <span class="work-duration">9 mos</span>
-          </div>
-        </div>
-        <span class="flagship-link">View details →</span>
-      </a>
-
-      <a href="#exp-omdena" class="flagship-card">
-        <div class="flagship-icon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        </div>
-        <div class="flagship-body">
-          <h3>Google × Omdena</h3>
-          <p class="flagship-role">Research Intern (Open Source)</p>
-          <div class="work-preview-meta">
-            <span class="work-date-range">Sep 2021 <span class="work-date-sep">—</span> Nov 2021</span>
-            <span class="work-duration">3 mos</span>
-          </div>
-        </div>
-        <span class="flagship-link">View details →</span>
-      </a>
-
-      <a href="#exp-freelance" class="flagship-card">
-        <div class="flagship-icon-wrap" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <div class="flagship-body">
-          <h3>Freelancing</h3>
-          <p class="flagship-role">Full-Stack &amp; AI Developer</p>
-          <div class="work-preview-meta">
-            <span class="work-date-range">Oct 2020 <span class="work-date-sep">—</span> Jul 2021</span>
-            <span class="work-duration">10 mos</span>
-          </div>
-        </div>
-        <span class="flagship-link">View details →</span>
-      </a>
-
-    </div>
-  </div>
-</section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
@@ -2745,11 +3031,13 @@
               <div class="exp-points-inner">
                 <ul class="exp-points">
                   <li>End-to-end owner — architected the platform, planned delivery milestones, designed drag-and-drop workflows, developed core orchestration, and tested across 4 production deployments.</li>
-                  <li>Built pipeline creation powered by LangGraph and Langflow — visual workflow composition with full programmatic control.</li>
+                  <li>Built pipeline creation powered by LangGraph and Langflow — visual workflow composition with full programmatic control, with MCP integrations for tool and data access.</li>
+                  <li>LiteLLM multi-provider routing with fallback chains for resilience against provider outages and rate limits.</li>
                   <li>Implemented event-driven triggers (webhooks, scheduled jobs, DB listeners) and 24×7 autonomous execution with durable state and retry logic.</li>
                   <li>Delivered 4 production multi-agent systems with human-in-the-loop checkpoints — order management, candidate screening, employee-org communications, and internal ops.</li>
                   <li>Each system comprises 3–6 specialised sub-agents: routing, tool-calling, and supervisor roles coordinating via shared state graphs.</li>
                   <li>FastAPI backend with async handling, JWT auth, webhook verification, structured logging, and end-to-end agent run tracing.</li>
+                  <li><strong>Currently leading the agentification of the monolithic dubbing platform into microservices</strong> — 12+ agents and sub-agents in LangGraph, with checkpointing for resumable long-running workflows, removing manual intervention from end-to-end dubbing delivery (phased rollout, partially live).</li>
                 </ul>
               </div>
             </div>
@@ -2765,8 +3053,10 @@
                 <ul class="exp-points">
                   <li>End-to-end owner — architected multi-tenant system design, planned ingestion workflows, designed retrieval UX, built FastAPI services, and validated accuracy with production QA cycles.</li>
                   <li>Multi-tenant RAG chatbot enabling employees to query up to 20 org-specific documents (policies, guidelines, HR docs) via secure per-org login.</li>
-                  <li>Full retrieval stack: LangChain orchestration, FAISS for fast local retrieval, Pinecone for cloud-scale search with isolated vector namespaces.</li>
-                  <li>OpenAI Embeddings for ingestion and GPT-4 for citation-grounded response generation back to source documents.</li>
+                  <li>Full retrieval stack: LangChain orchestration, FAISS for fast local retrieval, Pinecone and Qdrant for cloud-scale search with isolated per-org vector namespaces.</li>
+                  <li>Comprehensive RAG layer with query routing across Text RAG, Query RAG, Graph RAG, and Self-RAG strategies — selected per query type rather than one-size-fits-all retrieval.</li>
+                  <li>Retrieval quality tracked with Ragas against a 200-question golden set of internal policy and product documents; agent runs audited in Langfuse with prompt registry and token/cost/latency tracing.</li>
+                  <li>OpenAI SDK and embeddings for ingestion and citation-grounded response generation back to source documents.</li>
                   <li>Gmail, Airtable, and SMTP connectors plus calendar-based event management for end-to-end workflow automation.</li>
                   <li>FastAPI with multi-tenant auth, RBAC, per-org rate limiting, and admin dashboards for document management.</li>
                 </ul>
@@ -2783,7 +3073,7 @@
               <div class="exp-points-inner">
                 <ul class="exp-points">
                   <li>End-to-end owner of the visual dubbing stack — architected model &amp; platform roadmap, designed the studio UX, developed diffusion pipeline + APIs, and tested through studio and client production runs.</li>
-                  <li>Trained diffusion-based lip-sync model on 500 hours of visual-speaking data across 4×A100 and 4×H100 servers.</li>
+                  <li>Trained diffusion-based lip-sync model on 500 hours of visual-speaking data across 4×H100, 4×A100, and A40 servers.</li>
                   <li>Upgraded audio features from 29 DeepSpeech to 80 mel spectrogram bands for fast-speech support and richer emotional delivery.</li>
                   <li>Speaker-specific Identity Preservation models reduced per-speaker fine-tuning time by ~86%.</li>
                   <li>4× resolution boost (256 → 1024px) via Reference VAE + GAN-based super-resolution for theatrical and OTT delivery.</li>
@@ -2854,7 +3144,8 @@
             <div class="exp-points-wrap">
               <div class="exp-points-inner">
                 <ul class="exp-points">
-                  <li>Prompt pipelines for 50+ language dubbing across movies, series, ads, and promos — GPT and Google Translate routed by content type and complexity.</li>
+                  <li>Translation engine for 50+ language dubbing across movies, series, ads, and promos — context flow across scenes, speaker profiling, and scene interpretation for colloquial, semantically accurate, and phonetically synchronized output.</li>
+                  <li>Multi-step judgement-based feedback loop driving automated retries until quality thresholds are met.</li>
                   <li>Auto-adaptive punctuation aligned to original audio rhythm, reducing human post-edit time by ~70%.</li>
                   <li>Iterative few-shot calibration on studio feedback loops for continuous quality improvement.</li>
                   <li>Applied same framework — context injection, RAG prompting, chain-of-thought — to agentic copilot and RAG pipelines.</li>
@@ -2873,6 +3164,7 @@
                 <ul class="exp-points">
                   <li>Backend reliability across 3 core services (90+ APIs) — SQL query optimisation, inference API tuning, and high-concurrency handling.</li>
                   <li>Resolved bottlenecks via Python-based request queuing and threading locks on shared model instances.</li>
+                  <li>Two-tier caching (in-pod L1 + Redis L2 with pub/sub invalidation) across the migrated microservices.</li>
                   <li>Linux deployment with custom domains, SSL, Nginx reverse-proxy, and load balancing for media-heavy endpoints.</li>
                   <li>CloudFront CDN migration for static assets and generated media delivery.</li>
                   <li>GitLab CI/CD pipelines — automated testing, Docker builds, staged rollouts, and rollback procedures.</li>
@@ -2916,7 +3208,7 @@
       <div class="exp-item" id="exp-omdena">
         <div class="exp-dot"></div>
         <div class="exp-meta">
-          <span class="exp-company">Google × Omdena</span>
+          <span class="exp-company">Omdena <span style="font-weight:400;opacity:.75">(Google-partnered open-source program)</span></span>
           <span class="exp-period">Sep 2021 – Nov 2021</span>
         </div>
         <div class="exp-role">Research Intern (Open Source)</div>
@@ -2981,13 +3273,15 @@
     <div class="skills-grid">
 
       <div class="skill-card">
-        <div class="skill-card-icon">🤖</div>
+        <div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><path d="M8 13h.01M16 13h.01M9 17h6"/></svg></div>
         <h3>LLM &amp; Agent Frameworks</h3>
         <div class="skill-tags">
           <span class="tag">LangGraph</span>
           <span class="tag">Langflow</span>
           <span class="tag">LangChain</span>
           <span class="tag">CrewAI</span>
+          <span class="tag">MCP</span>
+          <span class="tag">LiteLLM</span>
           <span class="tag">OpenAI SDK</span>
           <span class="tag">Gemini API</span>
           <span class="tag">HuggingFace</span>
@@ -2995,7 +3289,7 @@
       </div>
 
       <div class="skill-card">
-        <div class="skill-card-icon">🧠</div>
+        <div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 0 0-3 3 3 3 0 0 0-2 5.2A3 3 0 0 0 9 19a3 3 0 0 0 3-1.5 3 3 0 0 0 3 1.5 3 3 0 0 0 2-5.8A3 3 0 0 0 15 8a3 3 0 0 0-3-3z"/><path d="M12 5v14"/></svg></div>
         <h3>AI &amp; ML Core</h3>
         <div class="skill-tags">
           <span class="tag">Generative AI</span>
@@ -3008,11 +3302,14 @@
       </div>
 
       <div class="skill-card">
-        <div class="skill-card-icon">🔍</div>
+        <div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
         <h3>Vector Search &amp; Retrieval</h3>
         <div class="skill-tags">
           <span class="tag">FAISS</span>
           <span class="tag">Pinecone</span>
+          <span class="tag">Qdrant</span>
+          <span class="tag">pgvector</span>
+          <span class="tag">Hybrid Search &amp; Reranking</span>
           <span class="tag">Semantic Search</span>
           <span class="tag">Vector Databases</span>
           <span class="tag">OpenAI Embeddings</span>
@@ -3020,7 +3317,37 @@
       </div>
 
       <div class="skill-card">
-        <div class="skill-card-icon">⚙️</div>
+        <div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h3>Evaluation &amp; Observability</h3>
+        <div class="skill-tags">
+          <span class="tag">Ragas</span>
+          <span class="tag">LLM-as-Judge</span>
+          <span class="tag">Golden-Set Evaluation</span>
+          <span class="tag">Langfuse</span>
+          <span class="tag">Agent Run Tracing</span>
+          <span class="tag">Token / Cost / Latency Monitoring</span>
+          <span class="tag">MLflow</span>
+          <span class="tag">DVC</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Engineering Practice</h3>
+        <div class="skill-tags">
+          <span class="tag">SOLID Principles</span>
+          <span class="tag">Clean Architecture</span>
+          <span class="tag">Ruff</span>
+          <span class="tag">uv</span>
+          <span class="tag">pytest</span>
+          <span class="tag">Type Hints</span>
+          <span class="tag">asyncio</span>
+          <span class="tag">Code Reviews</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6 1.65 1.65 0 0 0 10 3.09V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.14.35.4.64.73.83"/></svg></div>
         <h3>Frameworks &amp; Libraries</h3>
         <div class="skill-tags">
           <span class="tag">PyTorch</span>
@@ -3035,7 +3362,7 @@
       </div>
 
       <div class="skill-card">
-        <div class="skill-card-icon">☁️</div>
+        <div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
         <h3>Infrastructure</h3>
         <div class="skill-tags">
           <span class="tag">AWS</span>
@@ -3049,14 +3376,16 @@
       </div>
 
       <div class="skill-card">
-        <div class="skill-card-icon">💾</div>
+        <div class="skill-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg></div>
         <h3>Languages &amp; Databases</h3>
         <div class="skill-tags">
           <span class="tag">Python</span>
           <span class="tag">SQL</span>
           <span class="tag">Bash</span>
+          <span class="tag">PostgreSQL</span>
           <span class="tag">MySQL</span>
           <span class="tag">MongoDB</span>
+          <span class="tag">Redis</span>
         </div>
       </div>
 
@@ -3091,10 +3420,10 @@
       <div class="project-card" id="project-copilot">
         <div class="project-num">02</div>
         <div class="project-name">Enterprise AI Copilot (Multi-Tenant)</div>
-        <p class="project-desc">End-to-end owner of the enterprise copilot — architected multi-tenant system design, planned document workflows, designed retrieval &amp; action flows, built the full stack, and tested with production QA. Employees query up to 20 org-specific documents (policies, guidelines, HR docs) via secure per-org login with role-based access and isolated Pinecone vector namespaces. LangChain orchestration, FAISS for fast local retrieval, Pinecone for cloud-scale semantic search, OpenAI Embeddings + GPT-4 for grounded response generation with source citations. Gmail, Airtable, and SMTP connectors plus calendar-based event management close the loop from query to automated org workflow.</p>
+        <p class="project-desc">End-to-end owner of the enterprise copilot — architected multi-tenant system design, planned document workflows, designed retrieval &amp; action flows, built the full stack, and tested with production QA. Employees query up to 20 org-specific documents (policies, guidelines, HR docs) via secure per-org login with role-based access and isolated Pinecone vector namespaces. LangChain orchestration, FAISS for fast local retrieval, Pinecone for cloud-scale semantic search, OpenAI SDK and embeddings for grounded response generation with source citations. Gmail, Airtable, and SMTP connectors plus calendar-based event management close the loop from query to automated org workflow.</p>
         <div class="project-tech">
           <span class="tech-tag">LangChain</span>
-          <span class="tech-tag">GPT-4</span>
+          <span class="tech-tag">OpenAI SDK</span>
           <span class="tech-tag">FAISS</span>
           <span class="tech-tag">Pinecone</span>
           <span class="tech-tag">FastAPI</span>
@@ -3107,7 +3436,7 @@
       <div class="project-card" id="project-lipsync-studio">
         <div class="project-num">03</div>
         <div class="project-name">Lip-Sync Studio &amp; Diffusion Pipeline</div>
-        <p class="project-desc">End-to-end owner of visual dubbing — architected the diffusion pipeline and studio platform, planned model training &amp; rollout, designed studio workflows, developed inference APIs, and validated through production dubbing runs. Production-grade lip-sync for movie, web-series, ad, and promo content with batch processing, quality presets, and granular generation controls. Trained on 500 hours of visual-speaking data on 4×A100 and 4×H100 servers. Audio upgraded from 29 DeepSpeech to 80 mel spectrogram bands; speaker-specific IP models cut per-speaker training by ~86%; 4× resolution boost (256 → 1024px) via Reference VAE + GAN super-resolution. Adaptive IP for extreme edge cases; motion vector temporal smoothing for flicker-free output.</p>
+        <p class="project-desc">End-to-end owner of visual dubbing — architected the diffusion pipeline and studio platform, planned model training &amp; rollout, designed studio workflows, developed inference APIs, and validated through production dubbing runs. Production-grade lip-sync for movie, web-series, ad, and promo content with batch processing, quality presets, and granular generation controls. Trained on 500 hours of visual-speaking data on 4×H100, 4×A100, and A40 servers. Audio upgraded from 29 DeepSpeech to 80 mel spectrogram bands; speaker-specific IP models cut per-speaker training by ~86%; 4× resolution boost (256 → 1024px) via Reference VAE + GAN super-resolution. Adaptive IP for extreme edge cases; motion vector temporal smoothing for flicker-free output.</p>
         <a href="#demo-lipsync" class="project-demo-link">View demo →</a>
         <div class="project-tech">
           <span class="tech-tag">Diffusion Models</span>
@@ -3181,7 +3510,7 @@
       <div class="project-card">
         <div class="project-num">08</div>
         <div class="project-name">Neural Career Recommendation System</div>
-        <p class="project-desc">Open-source research with 29 selected researchers via Google × Omdena — analysing sensitive Colombian government standardised-test datasets to map academically-aligned career pathways for high school students. Designed, tested, and optimised a neural network-based recommendation system achieving 40% higher accuracy over all alternative approaches evaluated.</p>
+        <p class="project-desc">Open-source research with 29 selected researchers via Omdena, a Google-partnered open-source research program — analysing sensitive Colombian government standardised-test datasets to map academically-aligned career pathways for high school students. Designed, tested, and optimised a neural network-based recommendation system achieving 40% higher accuracy over all alternative approaches evaluated.</p>
         <div class="project-tech">
           <span class="tech-tag">Neural Networks</span>
           <span class="tech-tag">Recommendation Systems</span>
@@ -3201,6 +3530,52 @@
           <span class="tech-tag">Two-Stage Architecture</span>
           <span class="tech-tag">PyTorch</span>
           <span class="tech-tag">Published &amp; Indexed</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-label" style="margin-top:4rem">Personal &amp; Open Source</div>
+    <h2 class="section-heading">Built outside work</h2>
+    <p class="section-sub">Side projects exploring agentic architectures and MLOps tooling — part of <a class="inline-link" href="https://github.com/DSK10" target="_blank" rel="noopener">85+ repositories on GitHub</a>.</p>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-num">10</div>
+        <div class="project-name">Conversational AI Notetaker</div>
+        <p class="project-desc">Live assistant for multi-person conversations — takes the discussion topic as context, extracts keywords as people speak, and surfaces relevant notes in the UI in real time, so participants get supporting detail without breaking the flow of the conversation.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Real-Time</span>
+          <span class="tech-tag">Speech-to-Text</span>
+          <span class="tech-tag">Keyword Extraction</span>
+          <span class="tech-tag">LLM</span>
+          <span class="tech-tag">Streaming UI</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">11</div>
+        <div class="project-name">AgenticJobHunt</div>
+        <p class="project-desc">Multi-agent system that reads and scores a resume, then discovers and ranks relevant roles across multiple job sources. Built on LangGraph with deepagents, a LiteLLM fallback chain across providers, and Qdrant-backed RAG scoring for match quality.</p>
+        <div class="project-tech">
+          <span class="tech-tag">LangGraph</span>
+          <span class="tech-tag">deepagents</span>
+          <span class="tech-tag">LiteLLM</span>
+          <span class="tech-tag">Qdrant</span>
+          <span class="tech-tag">Multi-Agent</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">12</div>
+        <div class="project-name">KDC — MLflow + DVC Pipeline</div>
+        <p class="project-desc">Reproducible ML workflow combining MLflow experiment tracking with DVC data versioning — every run traceable back to the exact dataset, parameters, and code revision that produced it.</p>
+        <div class="project-tech">
+          <span class="tech-tag">MLflow</span>
+          <span class="tech-tag">DVC</span>
+          <span class="tech-tag">Experiment Tracking</span>
+          <span class="tech-tag">Reproducibility</span>
+          <span class="tech-tag">Python</span>
         </div>
       </div>
 
@@ -3492,22 +3867,22 @@
       <h4 class="life-subtitle" id="sports">Sports</h4>
       <div class="life-grid">
         <div class="life-item life-item--sport">
-          <span class="life-item-icon" aria-hidden="true">⚽</span>
+          <span class="life-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5l3.5 2.5-1.3 4.1H9.8L8.5 10z"/></svg></span>
           <span class="life-item-name">Football</span>
           <span class="life-item-note">Team sport — strategy, fitness, and competition on the pitch.</span>
         </div>
         <div class="life-item life-item--sport">
-          <span class="life-item-icon" aria-hidden="true">🏏</span>
+          <span class="life-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 3.5 21 7l-9.5 9.5-3.5-3.5z"/><path d="M7 15l2 2"/><circle cx="5" cy="19" r="2"/></svg></span>
           <span class="life-item-name">Cricket</span>
           <span class="life-item-note">Patience, tactics, and timing — on and off the field.</span>
         </div>
         <div class="life-item life-item--sport">
-          <span class="life-item-icon" aria-hidden="true">🏊</span>
+          <span class="life-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 17c2 0 2 1.5 4 1.5s2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5"/><circle cx="15" cy="6" r="2"/><path d="M6 14l4-3 3 2"/></svg></span>
           <span class="life-item-name">Swimming</span>
           <span class="life-item-note">Full-body endurance and rhythm — a reset between long build sessions.</span>
         </div>
         <div class="life-item life-item--sport">
-          <span class="life-item-icon" aria-hidden="true">🏸</span>
+          <span class="life-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3.5 20.5 10 12 18.5 5.5 12z"/><circle cx="4" cy="20" r="2"/><path d="M5.5 18.5 7 17"/></svg></span>
           <span class="life-item-name">Badminton</span>
           <span class="life-item-note">Fast reflexes, footwork, and rallies — precision under pressure.</span>
         </div>
@@ -3516,17 +3891,17 @@
       <h4 class="life-subtitle">Art &amp; visual craft</h4>
       <div class="life-grid">
         <div class="life-item life-item--hobby">
-          <span class="life-item-icon" aria-hidden="true">🎨</span>
+          <span class="life-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 2-.9 2-2 0-.5-.2-1-.6-1.4-.3-.4-.4-.8-.4-1.1 0-.8.7-1.5 1.5-1.5H17a4 4 0 0 0 4-4c0-4.4-4-8-9-8z"/><circle cx="7.5" cy="10.5" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16.5" cy="10.5" r="1"/></svg></span>
           <span class="life-item-name">Painting</span>
           <span class="life-item-note">Hands-on creative outlet — colour, composition, and expression.</span>
         </div>
         <div class="life-item life-item--hobby">
-          <span class="life-item-icon" aria-hidden="true">🎬</span>
+          <span class="life-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="m3 7 3-4h3l-3 4M10 7l3-4h3l-3 4"/></svg></span>
           <span class="life-item-name">VFX</span>
           <span class="life-item-note">Compositing, motion, and visual storytelling beyond raw footage.</span>
         </div>
         <div class="life-item life-item--hobby">
-          <span class="life-item-icon" aria-hidden="true">🧊</span>
+          <span class="life-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M12 22V12M3 7l9 5 9-5"/></svg></span>
           <span class="life-item-name">3D Animation</span>
           <span class="life-item-note">Characters, motion, and worlds — depth that parallels visual dubbing work.</span>
         </div>
@@ -3553,7 +3928,16 @@
         <span class="contact-role-tag">Python Developer</span>
       </div>
       <a href="mailto:deepeshsingh10@gmail.com" class="contact-email">deepeshsingh10@gmail.com</a>
-      <div style="font-family:var(--mono);font-size:0.8rem;color:var(--text-dim);margin-bottom:2rem;">+91 98070 46206</div>
+      <div class="contact-actions">
+        <button type="button" class="btn-ghost btn-copy" data-copy="deepeshsingh10@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy email
+        </button>
+        <a href="https://drive.google.com/file/d/1Xj2GKfV-FVhUcr6BHnls6Nq_HTYMakEk/view?usp=sharing" class="btn-ghost" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          View resume
+        </a>
+      </div>
       <div class="contact-links">
         <a href="https://doi.org/10.2174/2666255816666230608104148" class="contact-link" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
@@ -3562,7 +3946,7 @@
       </div>
 
       <div class="social-card">
-        <p class="social-card-text"><strong>55+ AI/ML projects on GitHub</strong> — repositories spanning production systems, experiments, and open-source contributions.</p>
+        <p class="social-card-text"><strong>85+ AI/ML projects on GitHub</strong> — repositories spanning production systems, experiments, and open-source contributions.</p>
         <div class="social-card-links">
           <a href="https://www.linkedin.com/in/10dsk/" class="social-card-link" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -3686,6 +4070,82 @@
       const project = toggle.closest('.exp-project');
       const isOpen = project.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', isOpen);
+    });
+  });
+
+  // Open the first project under each role so the pattern is obvious
+  document.querySelectorAll('.exp-item, .exp-role, [class*="exp-block"]').forEach(role => {
+    const first = role.querySelector('.exp-project');
+    if (first && !first.classList.contains('is-open')) {
+      first.classList.add('is-open');
+      const t = first.querySelector('.exp-project-toggle');
+      if (t) t.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  // Mobile navigation
+  (function () {
+    const btn  = document.getElementById('nav-toggle');
+    const menu = document.getElementById('nav-mobile');
+    if (!btn || !menu) return;
+
+    const setOpen = (open) => {
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if (open) {
+        menu.hidden = false;
+        requestAnimationFrame(() => menu.classList.add('is-open'));
+      } else {
+        menu.classList.remove('is-open');
+        setTimeout(() => { if (!menu.classList.contains('is-open')) menu.hidden = true; }, 340);
+      }
+      document.documentElement.style.overflow = open ? 'hidden' : '';
+    };
+
+    btn.addEventListener('click', () =>
+      setOpen(btn.getAttribute('aria-expanded') !== 'true'));
+
+    menu.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => setOpen(false)));
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') setOpen(false);
+    });
+
+    // close if the viewport grows back to desktop
+    window.matchMedia('(min-width: 769px)').addEventListener('change', e => {
+      if (e.matches) setOpen(false);
+    });
+  })();
+
+  // Scroll progress indicator
+  (function () {
+    const bar = document.createElement('div');
+    bar.className = 'scroll-progress';
+    document.body.appendChild(bar);
+    let ticking = false;
+    const update = () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.transform = `scaleX(${h > 0 ? window.scrollY / h : 0})`;
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  })();
+
+  // Copy-email buttons
+  document.querySelectorAll('[data-copy]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(btn.dataset.copy);
+        const prev = btn.dataset.label || btn.textContent.trim();
+        btn.dataset.label = prev;
+        btn.textContent = 'Copied';
+        btn.classList.add('is-copied');
+        setTimeout(() => { btn.textContent = prev; btn.classList.remove('is-copied'); }, 1800);
+      } catch (e) { /* clipboard unavailable */ }
     });
   });
 
@@ -4036,6 +4496,94 @@
   }
 
   document.querySelectorAll('.ip-compare').forEach(initIpCompare);
+</script>
+
+<p class="site-meta">Last updated August 2026 · Built and maintained by Deepesh Singh</p>
+
+
+<script>
+/* ---------------- Agent boot overlay ----------------
+   Pure theatre over an already-rendered page: never blocks content,
+   runs once per session, skippable, and disabled under reduced-motion. */
+(function () {
+  var el = document.getElementById('boot');
+  if (!el) return;
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var seen    = sessionStorage.getItem('booted') === '1';
+
+  if (reduced || seen) { el.remove(); return; }
+
+  document.documentElement.classList.add('booting');
+  sessionStorage.setItem('booted', '1');
+
+  var STEPS = [
+    ['initialising runtime',        'python · fastapi'],
+    ['loading agent registry',      '12 agents · 4 sub-graphs'],
+    ['restoring checkpoint state',  'langgraph · resumable'],
+    ['warming retrieval cache',     'qdrant · faiss · pinecone'],
+    ['health-check · agents',       '12/12 healthy'],
+    ['health-check · providers',    'openai · gemini · fallback'],
+    ['tracing',                     'langfuse']
+  ];
+
+  var TOTAL   = 1800;                          // hard ceiling, ms
+  var stride  = TOTAL / (STEPS.length + 1);
+  var log     = document.getElementById('boot-log');
+  var bar     = el.querySelector('.boot-bar i');
+  var nodes   = el.querySelectorAll('.boot-nodes circle');
+  var edges   = el.querySelectorAll('.boot-edges path');
+  var timers  = [];
+  var closed  = false;
+
+  function line(label, meta, ok) {
+    var li = document.createElement('li');
+    li.innerHTML = '<span class="b-label">▸ ' + label + '</span>' +
+                   '<span class="b-meta">' + meta + '</span>' +
+                   (ok ? '<span class="b-ok">ok</span>' : '');
+    log.appendChild(li);
+  }
+
+  function close() {
+    if (closed) return;
+    closed = true;
+    timers.forEach(clearTimeout);
+    el.classList.add('is-done');
+    document.documentElement.classList.remove('booting');
+    setTimeout(function () { el.remove(); }, 520);
+    window.removeEventListener('keydown', close);
+    window.removeEventListener('pointerdown', close);
+    window.removeEventListener('wheel', close);
+  }
+
+  // node 0 lights immediately
+  if (nodes[0]) nodes[0].classList.add('on', 'hot');
+
+  STEPS.forEach(function (step, i) {
+    timers.push(setTimeout(function () {
+      line(step[0], step[1], true);
+      bar.style.transform = 'scaleX(' + ((i + 1) / (STEPS.length + 1)) + ')';
+      if (nodes[i + 1]) nodes[i + 1].classList.add('on');
+      if (edges[i])     edges[i].classList.add('on');
+    }, stride * i + 90));
+  });
+
+  timers.push(setTimeout(function () {
+    var li = document.createElement('li');
+    li.innerHTML = '<span class="b-ready">▸ ready</span><span class="b-cursor"></span>';
+    log.appendChild(li);
+    bar.style.transform = 'scaleX(1)';
+    nodes.forEach && nodes.forEach(function (n) { n.classList.add('on'); });
+    [].forEach.call(nodes, function (n) { n.classList.add('on'); });
+    [].forEach.call(edges, function (e) { e.classList.add('on'); });
+  }, stride * STEPS.length + 90));
+
+  timers.push(setTimeout(close, TOTAL + 260));
+
+  window.addEventListener('keydown', close);
+  window.addEventListener('pointerdown', close);
+  window.addEventListener('wheel', close, { passive: true });
+})();
 </script>
 
 <script src="chat-config.example.js"></script>
